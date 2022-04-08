@@ -14,5 +14,7 @@ public static class Integrator
     {
         body.velocity += body.acceleration * dt;
         body.position += body.velocity * dt;
+
+        body.velocity += Force.ApplyDrag(body.velocity, body.drag) * dt;
     }
 }
